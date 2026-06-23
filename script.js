@@ -17,12 +17,17 @@ function displayStudents(){
 
     list.innerHTML = "";
 
-    students.forEach(student => {
+    students.forEach((student,index)=>{
 
         let li =
         document.createElement("li");
 
-        li.innerText = student;
+        li.innerHTML =
+        `${student}
+         <button
+         onclick="deleteStudent(${index})">
+         Delete
+         </button>`;
 
         list.appendChild(li);
 
@@ -55,5 +60,12 @@ function searchStudent(){
         }
 
     });
+
+}
+function deleteStudent(index){
+
+    students.splice(index,1);
+
+    displayStudents();
 
 }

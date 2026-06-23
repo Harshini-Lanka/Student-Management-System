@@ -29,3 +29,31 @@ function displayStudents(){
     });
 
 }
+function searchStudent(){
+
+    let keyword =
+    document
+    .getElementById("searchBox")
+    .value
+    .toLowerCase();
+
+    let students =
+    document.querySelectorAll("li");
+
+    students.forEach(student => {
+
+        if(student.innerText
+        .toLowerCase()
+        .includes(keyword)){
+
+            student.style.display="block";
+
+        }else{
+
+            student.style.display="none";
+
+        }
+
+    });
+
+}
